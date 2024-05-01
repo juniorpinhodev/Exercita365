@@ -29,11 +29,40 @@ export const UsersContextProvider = ({children})=> {
       alert('Usuário cadastrado com sucesso')
       readUsers()
     })
-    .catch(()=> alert('Erro ao adicionar o usuário'))
+    .catch(()=> alert('Erro ao cadastrar o usuário'))
+  }
+
+
+  function editUsers(dataUsers, id){
+    fetch(`http://localhost:3000/users/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(dataUsers)
+    })
+    .then(()=> {
+      alert('Usuário editado com sucesso')
+      readUsers()
+    })
+    .catch(()=> alert('Erro ao editar o usuário'))
+  }
+
+
+  function removeUsers(id){
+    fetch(`http://localhost:3000/users/${id}`, {
+      method: 'DELETE',
+
+    })
+    .then(()=> {
+      alert('Usuário removido com sucesso')
+      readUsers()
+    })
+    .catch(()=> alert('Erro ao remover o usuário'))
   }
 
   return(
-    <UsersContext.Provider value={{users, registerUsers}}>
+    <UsersContext.Provider value={{users, registerUsers, editUsers, removeUsers}}>
       {children}
     </UsersContext.Provider>
   )
