@@ -1,38 +1,46 @@
 {
-    "users": [
-      {
-        "nome": "João da Silva",
-        "sexo": "Masculino",
-        "cpf": "123.456.789-00",
-        "data_nascimento": "1990-01-01",
-        "email": "joao@email.com",
-        "senha": "123456",
-        "endereco": {
-          "logradouro": "Rua das Flores",
-          "numero": "123",
-          "bairro": "Centro",
-          "cidade": "São Paulo",
-          "estado": "SP",
-          "cep": "12345-678"
-        },
-        "id": 1
-      },
-      {
-        "nome": "Maria da Silva",
-        "sexo": "Feminino",
-        "cpf": "987.654.321-00",
-        "data_nascimento": "1995-05-05",
-        "email": "maria@email.com",
-        "senha": "123456",
-        "endereco": {
-          "logradouro": "Avenida das Palmeiras",
-          "numero": "456",
-          "bairro": "Jardins",
-          "cidade": "Rio de Janeiro",
-          "estado": "RJ",
-          "cep": "54321-987"
-        },
-        "id": 2
+  "users": [
+    {
+      "id": 1,
+      "isLogged": false,
+      "nome": "João da Silva",
+      "sexo": "Masculino",
+      "cpf": "123.456.78900",
+      "data_nascimento": "1990-01-01",
+      "email": "joao@email.com",
+      "senha": 123456,
+      "endereco": {
+        "logradouro": "Rua das Flores",
+        "numero": 123,
+        "bairro": "Centro",
+        "cidade": "São Paulo",
+        "estado": "SP",
+        "cep": "12345-678"
       }
-    ]
-  }
+    },
+    {
+      "id": 2,
+      "isLogged": false,
+      "nome": "Maria da Silva",
+      "sexo": "Feminino",
+      "cpf": "987.654.321-00",
+      "data_nascimento": "1995-05-05",
+      "email": "maria@email.com",
+      "senha": 123456,
+      "endereco": {
+        "logradouro": "Avenida das Palmeiras",
+        "numero": 456,
+        "bairro": "Jardins",
+        "cidade": "Rio de Janeiro",
+        "estado": "RJ",
+        "cep": "54321-987"
+      }
+    },
+    {
+      "id": "882d",
+      "nome": "sayt7",
+      "email": "78satd7sq",
+      "senha": "72578"
+    }
+  ]
+}

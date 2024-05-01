@@ -8,7 +8,7 @@ function App() {
   return (
     <div>
      <h1>Exercita365</h1>
-     
+     <Login />
      <Router>
         <Routes>
           <Route path="/login" element={<Login />} />

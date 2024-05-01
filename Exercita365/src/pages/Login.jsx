@@ -13,7 +13,7 @@ function Login (){
                    placeholder="Digite a sua senha"
             />
                     
-            <button onClick={()=> doLogin}>Cadastrar</button>
+            <button onClick={()=> doLogin}>Acessar</button>
         </div>
     )
 }
