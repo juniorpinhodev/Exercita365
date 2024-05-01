@@ -1,44 +1,39 @@
-import { createContext, useEffect, useState } from "react";
+import { useState, useEffect, createContext } from 'react';
+
 export const UsersContext = createContext()
 
-export const UsersContextProvider = ({children}) => {
+export const UsersContextProvider = ({children})=> {
+  const [ users, setUsers ]= useState([])
 
-  const [users, setUsers] = useState([])
+  useEffect(()=> {
+    readUsers()
+  },[])
 
-
-
-  async function login(email, password){
-    try {
-      const res = await fetch("http://localhost:3000/users")
-      const datas = await res.json()
-
-      let userExists= false
-
-      datas.map(user => {
-        if(user.email == email){
-          userExists = true
-          if(user.password == password){
-            localStorage.setItem("isAuthenticated", true)
-            window.location.href = "/"
-            return
-          }
-
-          alert("A senha está incorreta.")
-          return
-        }
-      })
-
-      if(!userExists){
-        alert("Email de usuário não cadastrado")
-      }
-
-    } catch {
-
-    }
+  function readUsers(){
+    fetch('http://localhost:3000/users')
+    .then(res => res.json())
+    .then(data => setUsers(data))
+    .catch(err => console.log(err))
   }
 
-  return (
-    <UsersContext.Provider value={{login}}>
+
+  function registerUsers(newUsers){
+    fetch('http://localhost:3000/users', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(newUsers)
+    })
+    .then(()=> {
+      alert('Usuário cadastrado com sucesso')
+      readUsers()
+    })
+    .catch(()=> alert('Erro ao adicionar o usuário'))
+  }
+
+  return(
+    <UsersContext.Provider value={{users, registerUsers}}>
       {children}
     </UsersContext.Provider>
   )
