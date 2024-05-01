@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "isLogged": false,
       "nome": "João da Silva",
       "sexo": "Masculino",
@@ -19,7 +19,7 @@
       }
     },
     {
-      "id": 2,
+      "id": "2",
       "isLogged": false,
       "nome": "Maria da Silva",
       "sexo": "Feminino",
@@ -37,10 +37,16 @@
       }
     },
     {
-      "id": "882d",
-      "nome": "sayt7",
-      "email": "78satd7sq",
-      "senha": "72578"
+      "id": "8c28",
+      "nome": "teste555",
+      "email": "teste",
+      "senha": "314"
+    },
+    {
+      "id": "e19a",
+      "nome": "fulano doido",
+      "email": "w@W",
+      "senha": "1222"
     }
   ]
 }
