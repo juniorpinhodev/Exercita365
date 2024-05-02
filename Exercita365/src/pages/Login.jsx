@@ -26,7 +26,7 @@ function Login() {
       <input type='password' 
              placeholder='Digiter a senha'
              value={user.senha}
-             onChange={(e)=> setUser({...user, senha: e.target.value})}
+             onChange={(e)=> setUser({...user, password: e.target.value})}
       />
              <button onClick={()=> doLogin(user)}>Acessar</button>
     </div>
