@@ -12,7 +12,7 @@ function Login() {
   })
 
   async function doLogin(){
-    await login(user.email, user.senha)
+    await login(user.email, user.password)
   }
 
     return (
@@ -25,10 +25,10 @@ function Login() {
       />
       <input type='password' 
              placeholder='Digiter a senha'
-             value={user.senha}
+             value={user.password}
              onChange={(e)=> setUser({...user, password: e.target.value})}
       />
-             <button onClick={()=> doLogin(user)}>Acessar</button>
+             <button onClick={doLogin}>Acessar</button>
     </div>
   )
 }
