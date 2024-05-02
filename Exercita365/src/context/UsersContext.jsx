@@ -44,6 +44,40 @@ export const UsersContextProvider = ({children})=> {
     }
   }
 
+  async function login(email, senha){
+    try {
+   
+      const res = await fetch("http://localhost:3000/users")
+      const data = await res.json()
+
+      let existUser = false
+
+      data.map(user => {
+    
+        if(user.email == email){
+          existUser = true
+          if(user.senha == senha){
+            localStorage.setItem("isAuthenticated", true)
+            window.location.href = "/"
+            return
+          }
+
+          alert("Senha incorreta!")
+          return
+        }
+
+      })
+
+      if(!existUser){
+        alert("Não existe um usuário com esse email!")
+      }
+
+    } catch {
+
+    }
+  }
+
+
   //POST cadastrar
   function registerUsers(newUsers){
     fetch('http://localhost:3000/users', {
