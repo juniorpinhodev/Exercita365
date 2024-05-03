@@ -124,25 +124,12 @@ export const UsersContextProvider = ({children})=> {
   }
 
 
-  const UsersContextProvider = (props) => {
-    const [users, setUsers] = useState([]);
-    const [exerciseLocations, setExerciseLocations] = useState([]);
-  
-    const registerUser = (user) => {
-      setUsers([...users, user]);
-    };
-  
-    const registerExerciseLocation = (location) => {
-      setExerciseLocations([...exerciseLocations, location]);
-    };
-
-
   return(
-    <UsersContext.Provider value={{users, readUsersId, login, registerUsers, editUsers, removeUsers, exerciseLocations, registerUser, registerExerciseLocation}}>
-      {props.children}
+    <UsersContext.Provider value={{users, readUsersId, login, registerUsers, editUsers, removeUsers}}>
+      {children}
     </UsersContext.Provider>
   );
 }; 
-}
+
 
 export default UsersContextProvider;
