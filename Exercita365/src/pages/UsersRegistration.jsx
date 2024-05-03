@@ -5,8 +5,9 @@ import React, { useContext, useState } from 'react';
 
 function UsersRegistration(){
 
-  const { users, registerUsers, removeUsers } = useContext(UsersContext)
+  const { users, registerUsers, removeUsers, editUsers } = useContext(UsersContext)
   const [newUsers, setNewUsers] = useState({
+    id: null,
     nome: '',
     email: '',
     senha: '',
@@ -23,6 +24,49 @@ function UsersRegistration(){
     }
   });
 
+  //Editar
+  const [isEditing, setIsEditing] = useState(false);
+
+  const handleEditUser = (user) => {
+    setNewUsers({
+      id: user.id,
+      nome: user.nome,
+      email: user.email,
+      senha: user.senha,
+      sexo: user.sexo,
+      cpf: user.cpf,
+      data_nascimento: user.data_nascimento,
+      endereco: { ...user.endereco }
+    });
+    setIsEditing(true);
+  };
+
+  const handleSubmit = () => {
+    if (isEditing) {
+      editUsers(newUsers);
+    } else {
+      registerUsers(newUsers);
+    }
+    setNewUsers({
+      id: null,
+      nome: '',
+      email: '',
+      senha: '',
+      sexo: '',
+      cpf: '',
+      data_nascimento: '',
+      endereco: {
+        logradouro: '',
+        numero: '',
+        bairro: '',
+        cidade: '',
+        estado: '',
+        cep: ''
+      }
+    });
+    setIsEditing(false);
+  };
+
 return(
     <>
       <h1>Usuários Cadastrados</h1>
@@ -33,7 +77,7 @@ return(
           <>
             <h3 key={user.id}>{user.nome}</h3>
             <button onClick={() => removeUsers(user.id)}>Deletar</button>
-            <button onClick={() => editUsers(user.id)}>Editar</button>
+            <button onClick={() => handleEditUser(user)}>Editar</button>
           </>
         ))}
 
@@ -169,7 +213,8 @@ return(
         /> <br/> <br/>
 
       
-      <button onClick={() => registerUsers(newUsers)}>Cadastrar</button>
+      {/* <button onClick={() => registerUsers(newUsers)}>Cadastrar</button> */}
+      <button onClick={handleSubmit}>{isEditing ? 'Editar' : 'Cadastrar'}</button>
     </>
 )
 }

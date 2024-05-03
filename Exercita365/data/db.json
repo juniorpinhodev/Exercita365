@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "isLogged": false,
       "nome": "João da Silva",
       "sexo": "Masculino",
@@ -19,7 +19,7 @@
       }
     },
     {
-      "id": 2,
+      "id": "2",
       "isLogged": false,
       "nome": "Maria da Silva",
       "sexo": "Feminino",
@@ -37,7 +37,7 @@
       }
     },
     {
-      "id": 3,
+      "id": "3",
       "isLogged": false,
       "nome": "Pedro Oliveira",
       "sexo": "Masculino",
@@ -55,7 +55,7 @@
       }
     },
     {
-      "id": 4,
+      "id": "4",
       "isLogged": false,
       "nome": "Ana Oliveira",
       "sexo": "Feminino",
@@ -73,7 +73,7 @@
       }
     },
     {
-      "id": 5,
+      "id": "5",
       "isLogged": false,
       "nome": "Marcos Oliveira",
       "sexo": "Masculino",
@@ -91,21 +91,37 @@
       }
     },
     {
-      "id": 6,
-      "isLogged": false,
+      "id": "6",
       "nome": "Carla Souza",
-      "sexo": "Feminino",
-      "cpf": "444.555.666-77",
-      "data_nascimento": "1987-09-25",
       "email": "carla@email.com",
       "senha": 123456,
+      "sexo": "Feminino",
+      "cpf": "444.555.666-77",
+      "data_nascimento": "1987-09-26",
       "endereco": {
         "logradouro": "Rua das Flores",
-        "numero": 333,
+        "numero": "333",
         "bairro": "Centro",
         "cidade": "Belo Horizonte",
         "estado": "MG",
         "cep": "54321-908"
+      }
+    },
+    {
+      "id": null,
+      "nome": "Marcelo Ramos",
+      "email": "Marcelo@email.com",
+      "senha": "123456",
+      "sexo": "Masculino",
+      "cpf": "23456543456",
+      "data_nascimento": "14-01-1988",
+      "endereco": {
+        "logradouro": "rua tal",
+        "numero": "123",
+        "bairro": "Juventude",
+        "cidade": "Florianópolis",
+        "estado": "SC",
+        "cep": "09545993"
       }
     }
   ]
