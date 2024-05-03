@@ -109,7 +109,6 @@
       }
     }
   ],
-
   "list": [
     {
       "id": "1",
@@ -119,7 +118,10 @@
       "localizacao": "Av. Paulista, 100",
       "longitude": -46.646511,
       "latitude": -23.561728,
-      "esportes": ["musculação", "caminhada"]
+      "esportes": [
+        "musculação",
+        "caminhada"
+      ]
     },
     {
       "id": "2",
@@ -128,8 +130,12 @@
       "descricao": "Praça ampla com pista de corrida",
       "localizacao": "Rua das Palmeiras, s/n",
       "longitude": -46.654321,
-      "latitude": -23.567890,
-      "esportes": ["caminhada", "corrida", "ginástica"]
+      "latitude": -23.56789,
+      "esportes": [
+        "caminhada",
+        "corrida",
+        "ginástica"
+      ]
     },
     {
       "id": "3",
@@ -139,7 +145,10 @@
       "localizacao": "Av. Sernambetiba, s/n",
       "longitude": -43.434343,
       "latitude": -22.222222,
-      "esportes": ["natação", "surf"]
+      "esportes": [
+        "natação",
+        "surf"
+      ]
     },
     {
       "id": "4",
@@ -147,9 +156,14 @@
       "userId": "3",
       "descricao": "Um dos maiores parques urbanos da América Latina",
       "localizacao": "Av. Pedro Álvares Cabral, s/n",
-      "longitude": -46.655000,
-      "latitude": -23.560000,
-      "esportes": ["caminhada", "corrida", "ciclismo", "skate"]
+      "longitude": -46.655,
+      "latitude": -23.56,
+      "esportes": [
+        "caminhada",
+        "corrida",
+        "ciclismo",
+        "skate"
+      ]
     },
     {
       "id": "5",
@@ -159,7 +173,10 @@
       "localizacao": "Av. Maracanã, s/n",
       "longitude": -43.239722,
       "latitude": -22.892222,
-      "esportes": ["futebol", "atletismo"]
+      "esportes": [
+        "futebol",
+        "atletismo"
+      ]
     },
     {
       "id": "6",
@@ -167,9 +184,11 @@
       "userId": "5",
       "descricao": "Um dos mais importantes museus de arte do Brasil",
       "localizacao": "Av. Paulista, 282",
-      "longitude": -46.645000,
-      "latitude": -23.560000,
-      "esportes": ["caminhada"]
+      "longitude": -46.645,
+      "latitude": -23.56,
+      "esportes": [
+        "caminhada"
+      ]
     },
     {
       "id": "6",
@@ -177,9 +196,34 @@
       "userId": "6",
       "descricao": "Estadio multiesportivo",
       "localizacao": "Av. Paulista, 282",
-      "longitude": -46.645000,
-      "latitude": -23.560000,
-      "esportes": ["futebol americano"]
+      "longitude": -46.645,
+      "latitude": -23.56,
+      "esportes": [
+        "futebol americano"
+      ]
+    },
+    {
+      "id": "9f97",
+      "nome": "nome d",
+      "descricao": "descrição",
+      "localizacao": "local",
+      "esportes": [
+        "estpooo"
+      ],
+      "longitude": "log",
+      "latitude": "lat"
+    },
+    {
+      "id": "dae2",
+      "userId":"4",
+      "nome": "nome",
+      "descricao": "desc",
+      "localizacao": "loc",
+      "esportes": [
+        "esp"
+      ],
+      "longitude": "lon",
+      "latitude": "lat"
     }
   ]
 }
