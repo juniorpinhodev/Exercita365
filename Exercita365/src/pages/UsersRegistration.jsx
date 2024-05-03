@@ -78,6 +78,18 @@ function UsersRegistration(){
     setIsEditing(false);
   };
 
+    //CPF 11 números
+    const handleCpfChange = (e) => {
+      let value = e.target.value;
+   
+      value = value.replace(/\D/g, '');
+   
+      if (value.length <= 11) {
+        value = value.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
+        setNewUsers({ ...newUsers, cpf: value });
+      }
+    };
+
   const handleCepChange = (e) => {
     const { value } = e.target;
     setNewUsers({
@@ -190,9 +202,7 @@ function UsersRegistration(){
                 type='text'
                 value={newUsers.cpf}
                 placeholder="CPF"
-                onChange={(e) =>
-                  setNewUsers({ ...newUsers, cpf: e.target.value })
-                }
+                onChange={handleCpfChange}
         /> &nbsp;
 
         <input
@@ -270,7 +280,7 @@ function UsersRegistration(){
             placeholder="CEP"
             onChange={(e) => {
                 setNewUsers({ ...newUsers, endereco: { ...newUsers.endereco, cep: e.target.value } });
-                SearchCEP(e); // Chama a função para buscar o CEP na API
+                SearchCEP(e);
             }}
         />
         <br/> <br/>
