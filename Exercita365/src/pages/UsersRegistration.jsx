@@ -1,6 +1,8 @@
 import { UsersContext } from '../context/UsersContext'
 import React, { useContext, useState } from 'react';
 
+
+
 function UsersRegistration(){
 
   const { users, registerUsers, removeUsers } = useContext(UsersContext)
@@ -23,7 +25,9 @@ function UsersRegistration(){
 
 return(
     <>
-      <h1>Cadastro usuário</h1>
+      <h1>Usuários Cadastrados</h1>
+      <p>Abaixo, segue a lista de usuários que estão cadastrados em nossa plataforma.</p>
+
       {!!users &&
         users.map((user) => (
           <>
@@ -32,16 +36,19 @@ return(
           </>
         ))}
 
-        <br />
+        <br/>
 
-        <input
+        <h1>Cadastre-se!</h1>
+        <p>Seja um dos nossos membros. Cadastre-se na maior plataforma de locais para atividades físicas de Floripa!</p>
+
+      <input
         type="text"
         value={newUsers.nome}
         placeholder="Digite o nome do usuário"
         onChange={(e) =>
           setNewUsers({ ...newUsers, nome: e.target.value })
-        }
-      />
+      }
+      /> 
 
       <input
         type="email"
@@ -50,7 +57,7 @@ return(
         onChange={(e) =>
             setNewUsers({ ...newUsers, email: e.target.value })
         }
-      />
+      />  <br />
 
       <input
         type="password"
@@ -59,7 +66,7 @@ return(
         onChange={(e) =>
           setNewUsers({ ...newUsers, senha: e.target.value })
         }
-      />
+      />  
 
         <input
             type="text"
@@ -68,7 +75,7 @@ return(
             onChange={(e) =>
                 setNewUsers({ ...newUsers, sexo: e.target.value })
         }
-        />
+        />  <br />
 
         <input
             type='text'
@@ -86,7 +93,7 @@ return(
             onChange={(e) =>
                 setNewUsers({ ...newUsers, data_nascimento: e.target.value })
         }
-        />
+        />  <br/>
 
         <input
             type="text"
@@ -110,7 +117,7 @@ return(
                 endereco: { ...newUsers.endereco, numero: e.target.value }
                 })
         }
-        />
+        /> <br/>
 
         <input
             type="text"
@@ -134,7 +141,7 @@ return(
                 endereco: { ...newUsers.endereco, cidade: e.target.value }
                 })
         }
-        />
+        /> <br/>
 
         <input
             type="text"
@@ -158,7 +165,7 @@ return(
                 endereco: { ...newUsers.endereco, cep: e.target.value }
                 })
         }
-        />
+        /> <br/> <br/>
 
       
       <button onClick={() => registerUsers(newUsers)}>Cadastrar</button>

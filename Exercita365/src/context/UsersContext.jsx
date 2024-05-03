@@ -79,13 +79,13 @@ export const UsersContextProvider = ({children})=> {
 
 
   //POST cadastrar
-  function registerUsers(newUsers){
+  function registerUsers(users){
     fetch('http://localhost:3000/users', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(newUsers)
+      body: JSON.stringify(users)
     })
     .then(()=> {
       alert('Usuário cadastrado com sucesso')
@@ -124,7 +124,7 @@ export const UsersContextProvider = ({children})=> {
   }
 
   return(
-    <UsersContext.Provider value={{users, readUsersId, registerUsers, editUsers, removeUsers}}>
+    <UsersContext.Provider value={{users, readUsersId, login, registerUsers, editUsers, removeUsers}}>
       {children}
     </UsersContext.Provider>
   )

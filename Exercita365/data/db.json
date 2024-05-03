@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "id": "1",
+      "id": 1,
       "isLogged": false,
       "nome": "João da Silva",
       "sexo": "Masculino",
@@ -19,7 +19,7 @@
       }
     },
     {
-      "id": "2",
+      "id": 2,
       "isLogged": false,
       "nome": "Maria da Silva",
       "sexo": "Feminino",
@@ -37,16 +37,76 @@
       }
     },
     {
-      "id": "8c28",
-      "nome": "teste555",
-      "email": "teste",
-      "senha": "314"
+      "id": 3,
+      "isLogged": false,
+      "nome": "Pedro Oliveira",
+      "sexo": "Masculino",
+      "cpf": "111.222.333-44",
+      "data_nascimento": "1985-07-15",
+      "email": "pedro@email.com",
+      "senha": 123456,
+      "endereco": {
+        "logradouro": "Rua dos Coqueiros",
+        "numero": 789,
+        "bairro": "Praia",
+        "cidade": "Recife",
+        "estado": "PE",
+        "cep": "87654-321"
+      }
     },
     {
-      "id": "e19a",
-      "nome": "fulano doido",
-      "email": "w@W",
-      "senha": "1222"
+      "id": 4,
+      "isLogged": false,
+      "nome": "Ana Oliveira",
+      "sexo": "Feminino",
+      "cpf": "222.333.444-55",
+      "data_nascimento": "1992-03-20",
+      "email": "ana@email.com",
+      "senha": 123456,
+      "endereco": {
+        "logradouro": "Rua das Palmas",
+        "numero": 101,
+        "bairro": "Praia de Iracema",
+        "cidade": "Fortaleza",
+        "estado": "CE",
+        "cep": "76543-210"
+      }
+    },
+    {
+      "id": 5,
+      "isLogged": false,
+      "nome": "Marcos Oliveira",
+      "sexo": "Masculino",
+      "cpf": "333.444.555-66",
+      "data_nascimento": "1980-12-10",
+      "email": "marcos@email.com",
+      "senha": 123456,
+      "endereco": {
+        "logradouro": "Avenida dos Ipês",
+        "numero": 222,
+        "bairro": "Centro",
+        "cidade": "Curitiba",
+        "estado": "PR",
+        "cep": "65432-109"
+      }
+    },
+    {
+      "id": 6,
+      "isLogged": false,
+      "nome": "Carla Souza",
+      "sexo": "Feminino",
+      "cpf": "444.555.666-77",
+      "data_nascimento": "1987-09-25",
+      "email": "carla@email.com",
+      "senha": 123456,
+      "endereco": {
+        "logradouro": "Rua das Flores",
+        "numero": 333,
+        "bairro": "Centro",
+        "cidade": "Belo Horizonte",
+        "estado": "MG",
+        "cep": "54321-908"
+      }
     }
   ]
 }
