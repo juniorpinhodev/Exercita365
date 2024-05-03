@@ -1,5 +1,6 @@
 import { useState, useContext} from 'react';
 import { UsersContext } from '../context/UsersContext'
+import { Link } from 'react-router-dom';
 
 
 function Login() {
@@ -29,6 +30,7 @@ function Login() {
              onChange={(e)=> setUser({...user, password: e.target.value})}
       />
              <button onClick={doLogin}>Acessar</button>
+             <Link to='/users/registration'>Cadastre-se aqui</Link>
     </div>
   )
 }
