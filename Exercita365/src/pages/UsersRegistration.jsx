@@ -114,7 +114,7 @@ return(
         users.map((user) => (
           <>
             <h3 key={user.id}>{user.nome}</h3>
-            <button onClick={() => removeUsers(user.id)}>Deletar</button>
+            <button onClick={() => removeUsers(user.id)}>Deletar</button> &nbsp;  
             <button onClick={() => handleEditUser(user)}>Editar</button>
           </>
         ))}
@@ -131,7 +131,7 @@ return(
         onChange={(e) =>
           setNewUsers({ ...newUsers, nome: e.target.value })
       }
-      /> 
+      /> &nbsp;
 
       <input
         type="email"
@@ -149,7 +149,7 @@ return(
         onChange={(e) =>
           setNewUsers({ ...newUsers, senha: e.target.value })
         }
-      />  
+      />  &nbsp;
 
         <input
             type="text"
@@ -165,7 +165,7 @@ return(
                 value={newUsers.cpf}
                 placeholder="CPF"
                 onChange={handleCpfChange}
-        />
+        /> &nbsp;
 
         <input
             type="text"
@@ -186,7 +186,7 @@ return(
                 endereco: { ...newUsers.endereco, logradouro: e.target.value }
                 })
         }
-        />
+        /> &nbsp;
 
         <input
             type="number"
@@ -210,7 +210,7 @@ return(
                 endereco: { ...newUsers.endereco, bairro: e.target.value }
                 })
         }
-        />
+        /> &nbsp;
 
         <input
             type="text"
@@ -234,7 +234,7 @@ return(
                 endereco: { ...newUsers.endereco, estado: e.target.value }
                 })
         }
-        />
+        /> &nbsp;
 
         <input
             type="text"
