@@ -95,8 +95,8 @@ export const UsersContextProvider = ({children})=> {
   }
 
   //PUT editar
-  function editUsers(dataUsers, id){
-    fetch(`http://localhost:3000/users/${id}`, {
+  function editUsers(dataUsers){
+    fetch(`http://localhost:3000/users/${dataUsers.id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'

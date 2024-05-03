@@ -33,6 +33,7 @@ return(
           <>
             <h3 key={user.id}>{user.nome}</h3>
             <button onClick={() => removeUsers(user.id)}>Deletar</button>
+            <button onClick={() => editUsers(user.id)}>Editar</button>
           </>
         ))}
 
