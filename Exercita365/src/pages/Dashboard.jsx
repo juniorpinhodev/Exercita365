@@ -4,14 +4,18 @@ import { Link } from 'react-router-dom';
 
 function Dashboard() {
   const [locais, setLocais] = useState([]);
+  const [usuariosAtivos, setUsuariosAtivos] = useState(0);
 
   useEffect(() => {
     const fetchLocais = async () => {
       try {
-        // Substitua pelo código de busca dos locais no seu arquivo db.json
         const response = await fetch('data/db.json');
         const data = await response.json();
         setLocais(data.list);
+
+        const usuariosAtivos = data.users.filter(user => user.isLogged).length;
+        setUsuariosAtivos(usuariosAtivos);
+
       } catch (error) {
         console.error('Erro ao buscar locais:', error);
       }
@@ -23,15 +27,27 @@ function Dashboard() {
     return ( 
       <div>
         <h1>Dashboard</h1>
+
+        <div className="card">
+        <h2>Usuários Ativos</h2>
+        <p>{usuariosAtivos}</p>
+
+        <h2>Locais Cadastrados</h2>
+        <p>{locais.length}</p>
+      </div> 
+
+      <div className="card">
+
+      </div>
         
-        <h2>Locais Cadastrados:</h2>
-      <ul>
+        <h2>Todos os Locais Cadastrados:</h2>
+      <>
         {locais.map(local => (
           <li key={local.id}>
             {local.nome} - {local.descricao}
           </li>
         ))}
-      </ul>
+      </>
          
         <Link to="/local-registration">Registrar Novo Local</Link>
       

@@ -2,7 +2,7 @@
   "users": [
     {
       "id": "1",
-      "isLogged": false,
+      "isLogged": true,
       "nome": "João da Silva",
       "sexo": "Masculino",
       "cpf": "123.456.78900",
@@ -20,7 +20,7 @@
     },
     {
       "id": "2",
-      "isLogged": false,
+      "isLogged": true,
       "nome": "Maria da Silva",
       "sexo": "Feminino",
       "cpf": "987.654.321-00",
@@ -38,7 +38,7 @@
     },
     {
       "id": "3",
-      "isLogged": false,
+      "isLogged": true,
       "nome": "Pedro Oliveira",
       "sexo": "Masculino",
       "cpf": "111.222.333-44",
@@ -56,7 +56,7 @@
     },
     {
       "id": "4",
-      "isLogged": false,
+      "isLogged": true,
       "nome": "Ana Oliveira",
       "sexo": "Feminino",
       "cpf": "222.333.444-55",
@@ -74,7 +74,7 @@
     },
     {
       "id": "5",
-      "isLogged": false,
+      "isLogged": true,
       "nome": "Marcos Oliveira",
       "sexo": "Masculino",
       "cpf": "333.444.555-66",
@@ -92,7 +92,7 @@
     },
     {
       "id": "6",
-      "isLogged": false,
+      "isLogged": true,
       "nome": "Carla Souza",
       "email": "carla@email.com",
       "senha": 123456,
@@ -109,6 +109,7 @@
       }
     }
   ],
+  
   "list": [
     {
       "id": "1",
@@ -191,7 +192,7 @@
       ]
     },
     {
-      "id": "6",
+      "id": "7",
       "nome": "Estadio Municipal",
       "userId": "6",
       "descricao": "Estadio multiesportivo",
@@ -201,29 +202,6 @@
       "esportes": [
         "futebol americano"
       ]
-    },
-    {
-      "id": "9f97",
-      "nome": "nome d",
-      "descricao": "descrição",
-      "localizacao": "local",
-      "esportes": [
-        "estpooo"
-      ],
-      "longitude": "log",
-      "latitude": "lat"
-    },
-    {
-      "id": "dae2",
-      "userId":"4",
-      "nome": "nome",
-      "descricao": "desc",
-      "localizacao": "loc",
-      "esportes": [
-        "esp"
-      ],
-      "longitude": "lon",
-      "latitude": "lat"
     }
   ]
 }
