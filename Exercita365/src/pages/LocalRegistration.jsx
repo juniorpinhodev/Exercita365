@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function LocalRegistration() {
   const [nome, setNome] = useState('');
@@ -7,6 +7,21 @@ function LocalRegistration() {
   const [esportes, setEsportes] = useState([]);
   const [longitude, setLongitude] = useState('');
   const [latitude, setLatitude] = useState('');
+  const [locais, setLocais] = useState([]);
+
+  useEffect(() => {
+    const fetchLocais = async () => {
+      try {
+        const response = await fetch('http://localhost:3000/list');
+        const data = await response.json();
+        setLocais(data);
+      } catch (error) {
+        console.error('Erro ao buscar locais:', error);
+      }
+    };
+
+    fetchLocais();
+  }, []);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -29,18 +44,53 @@ function LocalRegistration() {
       .then((response) => response.json())
       .then((result) => {
         console.log('Dados enviados:', result);
-        // Limpar os campos após o envio
+    
         setNome('');
         setDescricao('');
         setLocalizacao('');
         setEsportes([]);
         setLongitude('');
         setLatitude('');
+
+        setLocais([...locais, result]);
       })
       .catch((error) => {
         console.error('Erro ao enviar dados:', error);
       });
   };
+
+ 
+    const handleEdit = (id) => {
+        // Encontrar o local a ser editado
+        const localEditar = locais.find((local) => local.id === id);
+      
+        // Preencher os campos do formulário com os dados do local a ser editado
+        setNome(localEditar.nome);
+        setDescricao(localEditar.descricao);
+        setLocalizacao(localEditar.localizacao);
+        setEsportes(localEditar.esportes);
+        setLongitude(localEditar.longitude);
+        setLatitude(localEditar.latitude);
+      
+        // Remover o local da lista
+        setLocais(locais.filter((local) => local.id !== id));
+      };
+      
+      const handleDelete = (id) => {
+        fetch(`http://localhost:3000/list/${id}`, {
+          method: 'DELETE',
+        })
+          .then((response) => response.json())
+          .then(() => {
+            console.log('Local deletado com sucesso');
+            // Atualizar a lista de locais removendo o local deletado
+            setLocais(locais.filter((local) => local.id !== id));
+          })
+          .catch((error) => {
+            console.error('Erro ao deletar local:', error);
+          });
+      };
+      
 
   return (
     <div>
@@ -78,6 +128,19 @@ function LocalRegistration() {
         <br />
         <button type="submit">Salvar</button>
       </form>
+
+        <h2>Locais de Exercícios Registrados</h2>
+        <ul>
+            {locais.map((local) => (
+            <li key={local.id}>
+                {local.nome} - {local.descricao} - {local.localizacao} <br />
+                <button onClick={() => handleEdit(local.id)}>Editar</button> &nbsp;
+                <button onClick={() => handleDelete(local.id)}>Deletar</button>
+                <p></p>
+            </li>
+            ))}
+        </ul>
+       
     </div>
   );
 }

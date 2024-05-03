@@ -35,18 +35,27 @@ function Dashboard() {
         <h2>Locais Cadastrados</h2>
         <p>{locais.length}</p>
       </div> 
-
-      <div className="card">
-
-      </div>
         
         <h2>Todos os Locais Cadastrados:</h2>
       <>
         {locais.map(local => (
           <li key={local.id}>
-            {local.nome} - {local.descricao}
-          </li>
-        ))}
+          <strong></strong>{local.nome}<br />
+
+        </li>
+        ) )}
+      </>
+      <h2>Lista detalhada dos Locais Cadastrados:</h2>
+      <>
+        {locais.map(local => (
+          <li key={local.id}>
+          <strong>Nome: </strong>{local.nome}<br />
+          <strong>Descrição: </strong>{local.descricao}<br />
+          <strong>Localização: </strong>{local.localizacao}<br />
+          <strong>Esportes: </strong>{local.esportes.join(', ')}
+          <p></p>
+        </li>
+        ) )}
       </>
          
         <Link to="/local-registration">Registrar Novo Local</Link>
