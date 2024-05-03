@@ -106,23 +106,6 @@
         "estado": "MG",
         "cep": "54321-908"
       }
-    },
-    {
-      "id": null,
-      "nome": "Marcelo Ramos",
-      "email": "Marcelo@email.com",
-      "senha": "123456",
-      "sexo": "Masculino",
-      "cpf": "23456543456",
-      "data_nascimento": "14-01-1988",
-      "endereco": {
-        "logradouro": "rua tal",
-        "numero": "123",
-        "bairro": "Juventude",
-        "cidade": "Florianópolis",
-        "estado": "SC",
-        "cep": "09545993"
-      }
     }
   ]
 }

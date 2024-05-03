@@ -7,7 +7,6 @@ function UsersRegistration(){
 
   const { users, registerUsers, removeUsers, editUsers } = useContext(UsersContext)
   const [newUsers, setNewUsers] = useState({
-    id: null,
     nome: '',
     email: '',
     senha: '',
@@ -48,7 +47,6 @@ function UsersRegistration(){
       registerUsers(newUsers);
     }
     setNewUsers({
-      id: null,
       nome: '',
       email: '',
       senha: '',
@@ -66,6 +64,19 @@ function UsersRegistration(){
     });
     setIsEditing(false);
   };
+
+  const handleCpfChange = (e) => {
+    let value = e.target.value;
+    // Remove qualquer caractere que não seja número
+    value = value.replace(/\D/g, '');
+  
+    // Adiciona os pontos e o traço conforme o usuário digita
+    if (value.length <= 11) {
+      value = value.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
+      setNewUsers({ ...newUsers, cpf: value });
+    }
+  };
+  
 
 return(
     <>
@@ -123,12 +134,10 @@ return(
         />  <br />
 
         <input
-            type='text'
-            value={newUsers.cpf}
-            placeholder="CPF"
-            onChange={(e) =>
-                setNewUsers({ ...newUsers, cpf: e.target.value })
-        }
+                type='text'
+                value={newUsers.cpf}
+                placeholder="CPF"
+                onChange={handleCpfChange}
         />
 
         <input
