@@ -123,9 +123,13 @@ export const UsersContextProvider = ({children})=> {
     .catch(()=> alert('Erro ao remover o usuário'))
   }
 
+  function logout() {
+    localStorage.removeItem('isAuthenticated');
+
+  }
 
   return(
-    <UsersContext.Provider value={{users, readUsersId, login, registerUsers, editUsers, removeUsers}}>
+    <UsersContext.Provider value={{users, readUsersId, login, logout, registerUsers, editUsers, removeUsers}}>
       {children}
     </UsersContext.Provider>
   );

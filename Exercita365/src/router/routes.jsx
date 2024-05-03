@@ -6,7 +6,7 @@ import Dashboard from '../pages/Dashboard';
 import List from '../pages/List';
 import SearchCEP from "../pages/SearchCEP";
 import PrivateRoute from "../components/PrivateRoute";
-import LocalRegistration from '../pages/LocalRegistration';
+
 
 const routes = createBrowserRouter([
     {
@@ -33,10 +33,6 @@ const routes = createBrowserRouter([
           </PrivateRoute>
         )
        },
-       {
-        path: "/local-registration",
-        element: <LocalRegistration />
-        },
        {
         path: "/list/:id",
         element: <List />
