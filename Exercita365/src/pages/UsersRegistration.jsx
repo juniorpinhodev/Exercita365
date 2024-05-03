@@ -1,7 +1,6 @@
-import Navbar from '../components/Navbar';
 import { UsersContext } from '../context/UsersContext'
 import React, { useContext, useState } from 'react';
-
+import Navbar from '../components/Navbar';
 
 function UsersRegistration(){
 
@@ -40,7 +39,6 @@ function UsersRegistration(){
     });
     setOriginalCpf(user.cpf);
     setIsEditing(true);
-    
   };
 
   const handleSubmit = () => {
@@ -80,16 +78,12 @@ function UsersRegistration(){
     setIsEditing(false);
   };
 
-  //CPF 11 números
-  const handleCpfChange = (e) => {
-    let value = e.target.value;
- 
-    value = value.replace(/\D/g, '');
- 
-    if (value.length <= 11) {
-      value = value.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
-      setNewUsers({ ...newUsers, cpf: value });
-    }
+  const handleCepChange = (e) => {
+    const { value } = e.target;
+    setNewUsers({
+      ...newUsers,
+      endereco: { ...newUsers.endereco, cep: value }
+    });
   };
   
   const handleSexoChange = (e) => {
@@ -106,19 +100,51 @@ function UsersRegistration(){
     }
   };
 
-return(
+  const SearchCEP = async (e) => {
+    let cep = e.target.value;
+    cep = cep.replace(/\D/g, '');
+  
+    if (cep.length === 8) {
+      try {
+        const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+        const data = await response.json();
+  
+        if (data.erro) {
+          alert('CEP não encontrado');
+          return;
+        }
+  
+        setNewUsers({
+          ...newUsers,
+          endereco: {
+            ...newUsers.endereco,
+            logradouro: data.logradouro,
+            bairro: data.bairro,
+            cidade: data.localidade,
+            estado: data.uf,
+            cep: cep // Manter o formato original do CEP
+          }
+        });
+      } catch (error) {
+        console.error('Erro ao buscar CEP:', error);
+        alert('Erro ao buscar CEP, por favor, tente novamente.');
+      }
+    }
+  };
+  
+  return(
     <>
-    <Navbar />
+      <Navbar />
       <h1>Usuários Cadastrados</h1>
       <p>Abaixo, segue a lista de usuários que estão cadastrados em nossa plataforma.</p>
 
       {!!users &&
         users.map((user) => (
-          <>
-            <h3 key={user.id}>{user.nome}</h3>
+          <div key={user.id}>
+            <h3>{user.nome}</h3>
             <button onClick={() => removeUsers(user.id)}>Deletar</button> &nbsp;  
             <button onClick={() => handleEditUser(user)}>Editar</button>
-          </>
+        </div>
         ))}
 
         <br/>
@@ -157,16 +183,16 @@ return(
             type="text"
             value={newUsers.sexo}
             placeholder="Sexo"
-            onChange={(e) =>
-                setNewUsers({ ...newUsers, sexo: e.target.value })
-        }
+            onChange={handleSexoChange}
         />  <br />
 
         <input
                 type='text'
                 value={newUsers.cpf}
                 placeholder="CPF"
-                onChange={handleCpfChange}
+                onChange={(e) =>
+                  setNewUsers({ ...newUsers, cpf: e.target.value })
+                }
         /> &nbsp;
 
         <input
@@ -242,13 +268,12 @@ return(
             type="text"
             value={newUsers.endereco.cep}
             placeholder="CEP"
-            onChange={(e) =>
-                setNewUsers({
-                ...newUsers,
-                endereco: { ...newUsers.endereco, cep: e.target.value }
-                })
-        }
-        /> <br/> <br/>
+            onChange={(e) => {
+                setNewUsers({ ...newUsers, endereco: { ...newUsers.endereco, cep: e.target.value } });
+                SearchCEP(e); // Chama a função para buscar o CEP na API
+            }}
+        />
+        <br/> <br/>
 
       
       <button onClick={handleSubmit}>{isEditing ? 'Editar' : 'Cadastrar'}</button>
@@ -256,4 +281,4 @@ return(
 )
 }
 
-export default UsersRegistration
+export default UsersRegistration;

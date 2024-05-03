@@ -107,6 +107,23 @@
         "estado": "MG",
         "cep": "54321-908"
       }
+    },
+    {
+      "id": "4a8b",
+      "nome": "",
+      "email": "",
+      "senha": "",
+      "sexo": "",
+      "cpf": "",
+      "data_nascimento": "",
+      "endereco": {
+        "logradouro": "",
+        "numero": "",
+        "bairro": "",
+        "cidade": "",
+        "estado": "",
+        "cep": "88095600"
+      }
     }
   ],
   "list": [

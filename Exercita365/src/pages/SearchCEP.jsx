@@ -1,4 +1,7 @@
+import React, { useContext, useState } from 'react';
 import { useForm } from "react-hook-form";
+import { UsersContext } from '../context/UsersContext'
+import Navbar from '../components/Navbar';
 
 function SearchCEP() {
   const {register, handleSubmit, setValue, getValues, formState: {errors}} = useForm({defaultValues: {
@@ -76,6 +79,10 @@ function SearchCEP() {
       {errors.estado && <span>{errors.estado.message}</span>}
       <button type="submit">Enviar</button>
     </form>
+
+        
+
+
   );
 }
 
