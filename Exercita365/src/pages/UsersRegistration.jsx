@@ -2,7 +2,6 @@ import { UsersContext } from '../context/UsersContext'
 import React, { useContext, useState } from 'react';
 
 
-
 function UsersRegistration(){
 
   const { users, registerUsers, removeUsers, editUsers } = useContext(UsersContext)
@@ -25,6 +24,7 @@ function UsersRegistration(){
 
   //Editar
   const [isEditing, setIsEditing] = useState(false);
+  const [originalCpf, setOriginalCpf] = useState('');
 
   const handleEditUser = (user) => {
     setNewUsers({
@@ -37,13 +37,27 @@ function UsersRegistration(){
       data_nascimento: user.data_nascimento,
       endereco: { ...user.endereco }
     });
+    setOriginalCpf(user.cpf);
     setIsEditing(true);
+    
   };
 
   const handleSubmit = () => {
     if (isEditing) {
+      if (newUsers.cpf !== originalCpf) {
+        const cpfExists = users.some(user => user.cpf === newUsers.cpf);
+        if (cpfExists) {
+          alert('CPF já cadastrado');
+          return;
+        }
+      }
       editUsers(newUsers);
     } else {
+      const cpfExists = users.some(user => user.cpf === newUsers.cpf);
+      if (cpfExists) {
+        alert('CPF já cadastrado');
+        return;
+      }
       registerUsers(newUsers);
     }
     setNewUsers({
@@ -65,18 +79,31 @@ function UsersRegistration(){
     setIsEditing(false);
   };
 
+  //CPF 11 números
   const handleCpfChange = (e) => {
     let value = e.target.value;
-    // Remove qualquer caractere que não seja número
+ 
     value = value.replace(/\D/g, '');
-  
-    // Adiciona os pontos e o traço conforme o usuário digita
+ 
     if (value.length <= 11) {
       value = value.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
       setNewUsers({ ...newUsers, cpf: value });
     }
   };
   
+  const handleSexoChange = (e) => {
+    const value = e.target.value.toLowerCase();
+    if (value === 'masculino' || value === 'feminino') {
+      setNewUsers({ ...newUsers, sexo: value });
+    }
+  };
+  
+  const handleEmailChange = (e) => {
+    const value = e.target.value;
+    if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+      setNewUsers({ ...newUsers, email: value });
+    }
+  };
 
 return(
     <>
@@ -222,7 +249,6 @@ return(
         /> <br/> <br/>
 
       
-      {/* <button onClick={() => registerUsers(newUsers)}>Cadastrar</button> */}
       <button onClick={handleSubmit}>{isEditing ? 'Editar' : 'Cadastrar'}</button>
     </>
 )
