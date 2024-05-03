@@ -92,6 +92,7 @@
     },
     {
       "id": "6",
+      "isLogged": false,
       "nome": "Carla Souza",
       "email": "carla@email.com",
       "senha": 123456,
@@ -106,6 +107,79 @@
         "estado": "MG",
         "cep": "54321-908"
       }
+    }
+  ],
+
+  "list": [
+    {
+      "id": "1",
+      "nome": "Academia Central",
+      "userId": "1",
+      "descricao": "Academia completa com equipamentos modernos",
+      "localizacao": "Av. Paulista, 100",
+      "longitude": -46.646511,
+      "latitude": -23.561728,
+      "esportes": ["musculação", "caminhada"]
+    },
+    {
+      "id": "2",
+      "nome": "Praça da Cidade",
+      "userId": "1",
+      "descricao": "Praça ampla com pista de corrida",
+      "localizacao": "Rua das Palmeiras, s/n",
+      "longitude": -46.654321,
+      "latitude": -23.567890,
+      "esportes": ["caminhada", "corrida", "ginástica"]
+    },
+    {
+      "id": "3",
+      "nome": "Praia da Barra",
+      "userId": "2",
+      "descricao": "Praia com ótima infraestrutura para esportes",
+      "localizacao": "Av. Sernambetiba, s/n",
+      "longitude": -43.434343,
+      "latitude": -22.222222,
+      "esportes": ["natação", "surf"]
+    },
+    {
+      "id": "4",
+      "nome": "Parque Ibirapuera",
+      "userId": "3",
+      "descricao": "Um dos maiores parques urbanos da América Latina",
+      "localizacao": "Av. Pedro Álvares Cabral, s/n",
+      "longitude": -46.655000,
+      "latitude": -23.560000,
+      "esportes": ["caminhada", "corrida", "ciclismo", "skate"]
+    },
+    {
+      "id": "5",
+      "nome": "Estádio do Maracanã",
+      "userId": "4",
+      "descricao": "Um dos maiores estádios de futebol do mundo",
+      "localizacao": "Av. Maracanã, s/n",
+      "longitude": -43.239722,
+      "latitude": -22.892222,
+      "esportes": ["futebol", "atletismo"]
+    },
+    {
+      "id": "6",
+      "nome": "Museu de Arte de São Paulo (MASP)",
+      "userId": "5",
+      "descricao": "Um dos mais importantes museus de arte do Brasil",
+      "localizacao": "Av. Paulista, 282",
+      "longitude": -46.645000,
+      "latitude": -23.560000,
+      "esportes": ["caminhada"]
+    },
+    {
+      "id": "6",
+      "nome": "Estadio Municipal",
+      "userId": "6",
+      "descricao": "Estadio multiesportivo",
+      "localizacao": "Av. Paulista, 282",
+      "longitude": -46.645000,
+      "latitude": -23.560000,
+      "esportes": ["futebol americano"]
     }
   ]
 }
