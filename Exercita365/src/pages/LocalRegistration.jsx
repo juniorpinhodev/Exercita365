@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Navbar from '../components/Navbar';
 
 function LocalRegistration() {
   const [nome, setNome] = useState('');
@@ -63,8 +64,7 @@ function LocalRegistration() {
     const handleEdit = (id) => {
         // Encontrar o local a ser editado
         const localEditar = locais.find((local) => local.id === id);
-      
-        // Preencher os campos do formulário com os dados do local a ser editado
+
         setNome(localEditar.nome);
         setDescricao(localEditar.descricao);
         setLocalizacao(localEditar.localizacao);
@@ -83,7 +83,7 @@ function LocalRegistration() {
           .then((response) => response.json())
           .then(() => {
             console.log('Local deletado com sucesso');
-            // Atualizar a lista de locais removendo o local deletado
+    
             setLocais(locais.filter((local) => local.id !== id));
           })
           .catch((error) => {
@@ -94,7 +94,8 @@ function LocalRegistration() {
 
   return (
     <div>
-      <h1>Cadastro e Edição de Locais de Exercícios</h1>
+      <Navbar />
+      <h1>Cadastre Locais para Exercícios físicos</h1>
       <form onSubmit={handleSubmit}>
         <label>
           Nome do Local:
@@ -130,6 +131,7 @@ function LocalRegistration() {
       </form>
 
         <h2>Locais de Exercícios Registrados</h2>
+        <h3>Aqui você pode editar ou deletar locais</h3>
         <ul>
             {locais.map((local) => (
             <li key={local.id}>

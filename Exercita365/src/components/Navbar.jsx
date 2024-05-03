@@ -14,8 +14,8 @@ const Navbar = () => {
     <nav>
       <>
         <Link to="/">Home</Link> &nbsp;
-        <Link to="/profile">Profile</Link> &nbsp;
-        <Link to="/settings">Settings</Link> &nbsp;
+        <Link to="/users/registration">Usuários</Link> &nbsp;
+        <Link to="/local-registration">Locais</Link> &nbsp;
         <button onClick={handleLogout}>Sair</button>
       </>
     </nav>

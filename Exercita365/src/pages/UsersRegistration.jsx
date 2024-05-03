@@ -1,3 +1,4 @@
+import Navbar from '../components/Navbar';
 import { UsersContext } from '../context/UsersContext'
 import React, { useContext, useState } from 'react';
 
@@ -107,6 +108,7 @@ function UsersRegistration(){
 
 return(
     <>
+    <Navbar />
       <h1>Usuários Cadastrados</h1>
       <p>Abaixo, segue a lista de usuários que estão cadastrados em nossa plataforma.</p>
 
