@@ -107,7 +107,7 @@ function UsersRegistration(){
   
   const handleEmailChange = (e) => {
     const value = e.target.value;
-    if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+     {
       setNewUsers({ ...newUsers, email: value });
     }
   };
@@ -170,16 +170,14 @@ function UsersRegistration(){
         placeholder="Digite o nome do usuário"
         onChange={(e) =>
           setNewUsers({ ...newUsers, nome: e.target.value })
-      }
+      }  required
       /> &nbsp;
 
       <input
         type="email"
         value={newUsers.email}
         placeholder="Email do usuário"
-        onChange={(e) =>
-            setNewUsers({ ...newUsers, email: e.target.value })
-        }
+        onChange={handleEmailChange}  required
       />  <br />
 
       <input
@@ -188,22 +186,29 @@ function UsersRegistration(){
         placeholder="Senha do usuário"
         onChange={(e) =>
           setNewUsers({ ...newUsers, senha: e.target.value })
-        }
+        }  required
       />  &nbsp;
 
-        <input
-            type="text"
-            value={newUsers.sexo}
-            placeholder="Sexo"
-            onChange={handleSexoChange}
-        />  <br />
+      <select
+          value={newUsers.sexo}
+          onChange={(e) => setNewUsers({ ...newUsers, sexo: e.target.value })}
+      >
+          <option value="">Selecione o sexo</option>
+          <option value="masculino">Masculino</option>
+          <option value="feminino">Feminino</option>
+      </select>
+      <br />
 
-        <input
-                type='text'
-                value={newUsers.cpf}
-                placeholder="CPF"
-                onChange={handleCpfChange}
-        /> &nbsp;
+      <input
+        type='text'
+        value={newUsers.cpf}
+        placeholder="CPF"
+        onChange={handleCpfChange}
+        required
+        pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"
+        title="Digite um CPF válido"
+    />
+    &nbsp;
 
         <input
             type="text"
@@ -281,7 +286,7 @@ function UsersRegistration(){
             onChange={(e) => {
                 setNewUsers({ ...newUsers, endereco: { ...newUsers.endereco, cep: e.target.value } });
                 SearchCEP(e);
-            }}
+            }}  required
         />
         <br/> <br/>
 

@@ -5,7 +5,7 @@ function LocalRegistration() {
   const [nome, setNome] = useState('');
   const [descricao, setDescricao] = useState('');
   const [localizacao, setLocalizacao] = useState('');
-  const [esportes, setEsportes] = useState([]);
+  const [esportes, setEsportes] = useState('');
   const [longitude, setLongitude] = useState('');
   const [latitude, setLatitude] = useState('');
   const [locais, setLocais] = useState([]);
@@ -122,10 +122,34 @@ function LocalRegistration() {
           <input type="text" value={latitude} onChange={(e) => setLatitude(e.target.value)} required />
         </label>
         <br />
+        
         <label>
           Esportes:
-          <input type="text" value={esportes} onChange={(e) => setEsportes(e.target.value.split(','))} required />
+          <select
+            value={esportes}
+            onChange={(e) => setEsportes(e.target.value)}
+            required
+          >
+            <option value="">Selecione</option>
+            <option value="caminhada">Caminhada</option>
+            <option value="trilha">Trilha</option>
+            <option value="corrida">Corrida</option>
+            <option value="ciclismo">Ciclismo</option>
+            <option value="musculacao">Musculação</option>
+            <option value="tenis">Tênis</option>
+            <option value="futebol">Futebol</option>
+            <option value="futebolamericano">Futebol Americano</option>
+            <option value="basquete">Basquete</option>
+            <option value="baseball">Baseball</option>
+            <option value="volei">Vôlei</option>
+            <option value="rugby">Rugby</option>
+            <option value="natacao">Natação</option>
+            <option value="surf">Surf</option>
+          </select>
         </label>
+
+
+
         <br />
         <button type="submit">Salvar</button>
       </form>
