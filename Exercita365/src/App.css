@@ -6,37 +6,140 @@
 }
 
 .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  font-size: 5em;
+  color: #fff;
+  margin: 16px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav a {
+  text-decoration: none;
+  margin-right: 1.1em;
+  font-size: 1.1em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.nav a:hover {
+  color: #cdc6da;
 }
 
-.card {
-  padding: 2em;
+h1 {
+  background: linear-gradient(to right, #61048d, #775394, #5a3ca1, #2d0b7e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
+
 
 .read-the-docs {
   color: #888;
+}
+
+.box {
+  border: 3px solid #ccc; 
+  border-radius: 20px; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  padding: 20px;
+  background-color: #3b3b3b80; /* Cor de fundo */
+}
+
+
+.card {
+  background-color: #333;
+  padding: 8px;
+  border-radius: 10px;
+  margin: 22px;
+  animation: neon-animation 1s infinite alternate;
+}
+
+@keyframes neon-animation {
+  0% {
+    box-shadow: 0 0 2px transparent, 0 0 4px transparent, 0 0 6px transparent, 0 0 8px #8a63d1,
+      0 0 14px #8a63d1, 0 0 16px #8a63d1, 0 0 20px #8a63d1, 0 0 30px #6c63ff; 
+  }
+  25% {
+    box-shadow: 0 0 4px transparent, 0 0 8px transparent, 0 0 12px transparent, 0 0 16px #8a63d1,
+      0 0 28px #8a63d1, 0 0 32px #8a63d1, 0 0 40px #8a63d1, 0 0 60px #6c63ff;
+  }
+  50% {
+    box-shadow: 0 0 6px transparent, 0 0 10px transparent, 0 0 14px transparent, 0 0 18px #8a63d1,
+      0 0 32px #8a63d1, 0 0 36px #8a63d1, 0 0 44px #8a63d1, 0 0 64px #6c63ff;
+  }
+  75% {
+    box-shadow: 0 0 4px transparent, 0 0 8px transparent, 0 0 12px transparent, 0 0 16px #8a63d1,
+      0 0 28px #8a63d1, 0 0 32px #8a63d1, 0 0 40px #8a63d1, 0 0 60px #6c63ff;
+  }
+  100% {
+    box-shadow: 0 0 2px transparent, 0 0 4px transparent, 0 0 6px transparent, 0 0 8px #8a63d1,
+      0 0 14px #8a63d1, 0 0 16px #8a63d1, 0 0 20px #8a63d1, 0 0 30px #6c63ff;
+  }
+}
+
+
+/* Media query para telas de até 768px */
+@media (max-width: 768px) {
+  #root {
+    padding: 1rem;
+  }
+  
+  .logo {
+    font-size: 3.7em;
+   
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  button {
+    padding: 0.5em 1em;
+    font-size: 0.8em;
+  }
+}
+
+/* Media query para telas de até 480px (celulares) */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5em;
+  }
+}
+
+body {
+  background-color: #222;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+}
+
+
+button {
+  background-color: #6c63ff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2em;
+  }
+
+  button {
+    padding: 10px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5em;
+  }
+
+  button {
+    padding: 8px 12px;
+  }
 }

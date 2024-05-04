@@ -32,15 +32,16 @@ function Dashboard() {
  
         <h1>Dashboard</h1>
 
-        <div className="card">
+        <div className="box">
         <h2>Usuários Ativos</h2>
         <p>{usuariosAtivos}</p>
 
         <h2>Locais Cadastrados</h2>
         <p>{locais.length}</p>
-      </div> 
-        
-        <MapContainer center={[-23.561728, -46.646511]} zoom={6} style={{ height: '300px' }}>
+      </div> <br />
+
+      <div className="card">
+        <MapContainer center={[-23.561728, -46.646511]} zoom={6} style={{ height: '300px'}}>
           <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
           {locais.map(local => (
             <Marker key={local.id} position={[local.latitude, local.longitude]}>
@@ -48,6 +49,7 @@ function Dashboard() {
             </Marker>
           ))}
         </MapContainer>
+        </div>
 
         <br />
 

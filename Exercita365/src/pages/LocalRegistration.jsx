@@ -98,33 +98,33 @@ function LocalRegistration() {
       <h1>Cadastre Locais para Exercícios físicos</h1>
       <form onSubmit={handleSubmit}>
         <label>
-          Nome do Local:
+          Nome do Local: &nbsp;
           <input type="text" value={nome} onChange={(e) => setNome(e.target.value)} required />
         </label>
         <br />
         <label>
-          Descrição:
+          Descrição: &nbsp;
           <textarea value={descricao} onChange={(e) => setDescricao(e.target.value)} required />
         </label>
         <br />
         <label>
-          Localização:
+          Localização: &nbsp;
           <input type="text" value={localizacao} onChange={(e) => setLocalizacao(e.target.value)} required />
         </label>
         <br />
         <label>
-          Longitude:
+          Longitude: &nbsp;
           <input type="text" value={longitude} onChange={(e) => setLongitude(e.target.value)} required />
         </label>
         <br />
         <label>
-          Latitude:
+          Latitude: &nbsp;
           <input type="text" value={latitude} onChange={(e) => setLatitude(e.target.value)} required />
         </label>
         <br />
         
         <label>
-          Esportes:
+          Esportes: &nbsp;
           <select
             value={esportes}
             onChange={(e) => setEsportes(e.target.value)}

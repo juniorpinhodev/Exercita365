@@ -8,7 +8,7 @@ function App() {
   return (
     <>
         <Navbar />
-        <h1>Exercita 365</h1>
+        <h2 className='logo'>Exercita 365</h2>
         <Outlet />
     </>
   )
