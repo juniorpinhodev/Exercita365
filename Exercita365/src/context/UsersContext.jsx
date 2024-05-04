@@ -58,6 +58,7 @@ export const UsersContextProvider = ({children})=> {
           existUser = true
           if(user.senha == senha){
             localStorage.setItem("isAuthenticated", true)
+            localStorage.setItem('userId', user.id);
             window.location.href = "/"
             return
           }
@@ -111,21 +112,29 @@ export const UsersContextProvider = ({children})=> {
   }
 
   //DELETE
-  function removeUsers(id){
-    fetch(`http://localhost:3000/users/${id}`, {
-      method: 'DELETE',
-
-    })
-    .then(()=> {
+  async function removeUsers(id){
+    try {
+      const result = await fetch(`http://localhost:3000/list?userId=${id}`)
+      const data = await result.json()
+      if (data.length > 0) {
+        alert('O usuário não pode ser removido pois existem locais de exercícios vinculados a ele.')
+        return
+      }
+  
+      await fetch(`http://localhost:3000/users/${id}`, {
+        method: 'DELETE',
+      })
       alert('Usuário removido com sucesso')
       readUsers()
-    })
-    .catch(()=> alert('Erro ao remover o usuário'))
+    } catch {
+      alert('Erro ao remover o usuário')
+    }
   }
+  
 
   function logout() {
     localStorage.removeItem('isAuthenticated');
-
+    window.location.href = '/login';
   }
 
   return(
