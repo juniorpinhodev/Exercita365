@@ -29,13 +29,17 @@ Após se cadastrar e logar na plataforma, os usuários podem cadastrar novos loc
 
 A Interface do Usuário deste projeto consiste em um layout simples e intuitiva para gerenciar os dados dos usuários e as listas de locais para exercícios físicos. <br>
 Ao acessar, o usuário encontra a tela de login. Caso o usuário não esteja cadastrado, ele pode criar cadastro clicando em "Cadastre-se aqui".
-![Web 1](https://github.com/juniorpinhodev/assets/blob/main/) <br> <br>
+![login](https://github.com/juniorpinhodev/assets/blob/main/Image-Exercita365/login.png) <br> <br>
 
 Ao efetuar login, o usuário é direcionado a tela principal (Dashboard), o usuário encontra uma lista com informações de locais para exercícios físicos. Também encontra um Mapa com as marcações das localizações exatadas de cada local cadastrado. <br> <br>
-![Web 2](https://github.com/juniorpinhodev/assets/blob/main/) <br> <br>
+![Dashboard1](https://github.com/juniorpinhodev/assets/blob/main/Image-Exercita365/dashboard1.png) 
+<br>
+![Deashboard2](https://github.com/juniorpinhodev/assets/blob/main/Image-Exercita365/dashboard2.png) 
+
+<br> <br>
 
 Ao clicar no link "Locais", na barra de navegação, o usuário poderá cadstrar novos locais de exercícios físicos e colaborar com o Exercíta365. Também é possivel editar para corrigir informações de locais ou deletar locais, caso a informação esteja duplicada ou inexistente. 
-![Web 2](https://github.com/juniorpinhodev/assets/blob/main/) <br> <br>
+![Locais]([https://github.com/juniorpinhodev/assets/blob/main/](https://github.com/juniorpinhodev/assets/blob/main/Image-Exercita365/locais.png)) <br> <br>
 
 
 ## Diagrama do Projeto
