@@ -22,7 +22,7 @@ Após se cadastrar e logar na plataforma, os usuários podem cadastrar novos loc
 
 - **Backend:** *Node.js* e *Express* para criar a API RESTful.
 - - ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
-- - ![jsonServer](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+- - ![jsonServer](https://img.shields.io/badge/jsonServer-6DA55F?style=for-the-badge&logoColor=white)
 
 
 ## Interface do Usuário
