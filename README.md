@@ -39,7 +39,7 @@ Ao efetuar login, o usuário é direcionado a tela principal (Dashboard), o usu�
 <br> <br>
 
 Ao clicar no link "Locais", na barra de navegação, o usuário poderá cadstrar novos locais de exercícios físicos e colaborar com o Exercíta365. Também é possivel editar para corrigir informações de locais ou deletar locais, caso a informação esteja duplicada ou inexistente. 
-![Locais]([https://github.com/juniorpinhodev/assets/blob/main/](https://github.com/juniorpinhodev/assets/blob/main/Image-Exercita365/locais.png)) <br> <br>
+![Locais](https://github.com/juniorpinhodev/assets/blob/main/Image-Exercita365/locais.png) <br> <br>
 
 
 ## Diagrama do Projeto
@@ -48,7 +48,7 @@ Ao preencher a caixa de texto e clicar no botão "Adicionar", uma requisição P
 Para as operações de editar, deletar e exibir na tela, o fluxo é semelhante: uma requisição é enviada do frontend para o backend, que realiza as operações necessárias e retorna os dados atualizados para o frontend.
 
 O diagrama abaixo visualiza esse processo de forma clara e mostra a interação entre as diferentes partes da aplicação, destacando a comunicação entre frontend e backend <br> <br>
-![Diagrama](https://github.com/juniorpinhodev/assets/blob/main/)
+![Diagrama](https://github.com/juniorpinhodev/assets/blob/main/Image-Exercita365/diagrama365.png)
 
 
 ## Guia de Instalação / Como Rodar o Projeto
