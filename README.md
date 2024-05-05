@@ -84,16 +84,20 @@ cd frontend
 npm install
 ```
 <br>
+
 - Instalando **json Server**
 ```bash
 npm install json-server
 ```
 <br>
+
 - Instalando **react-dom**
 ```bash
 npm install react-dom
 ```
+
 <br>
+
 - Instalando **react-router-dom**
 ```bash
 npm install react-router-dom
@@ -104,7 +108,9 @@ npm install react-router-dom
 ```bash
 npm install react-hook-form
 ```
+
 <br>
+
 - Instalando **leaflet**
 ```bash
 npm install leaflet
