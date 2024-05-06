@@ -20,7 +20,7 @@ Após se cadastrar e logar na plataforma, os usuários podem cadastrar novos loc
 - - ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 - - ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 
-- **Backend:** *Node.js* e *Express* para criar a API RESTful.
+- **Backend:** *Node.js* (Json Server) para simular backend.
 - - ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 - - ![jsonServer](https://img.shields.io/badge/jsonServer-6DA55F?style=for-the-badge&logoColor=white&color=blue&labelColor=white)
 
