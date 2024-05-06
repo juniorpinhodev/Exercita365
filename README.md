@@ -32,7 +32,7 @@ Ao acessar, o usuário encontra a tela de login. Caso o usuário não esteja cad
 ![login](https://github.com/juniorpinhodev/assets/blob/main/Image-Exercita365/login.png) <br> <br>
 
 Ao efetuar login, o usuário é direcionado a tela principal (Dashboard), o usuário encontra uma lista com informações de locais para exercícios físicos. Também encontra um Mapa com as marcações das localizações exatadas de cada local cadastrado. <br> <br>
-![Dashboard1](https://github.com/juniorpinhodev/assets/blob/main/Image-Exercita365/dashboard1.png) 
+![Dashboard1](https://github.com/juniorpinhodev/assets/blob/main/Image-Exercita365/dashboard-1.png) 
 <br>
 ![Deashboard2](https://github.com/juniorpinhodev/assets/blob/main/Image-Exercita365/dashboard2.png) 
 
