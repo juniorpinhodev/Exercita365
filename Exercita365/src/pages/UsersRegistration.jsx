@@ -187,7 +187,7 @@ function UsersRegistration(){
         onChange={(e) =>
           setNewUsers({ ...newUsers, senha: e.target.value })
         }  required
-      />  &nbsp;
+      />  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 
       <select
           value={newUsers.sexo}
@@ -209,15 +209,16 @@ function UsersRegistration(){
         title="Digite um CPF válido"
     />
     &nbsp;
-
+   
         <input
-            type="text"
-            value={newUsers.data_nascimento}
-            placeholder="Data de Nascimento"
-            onChange={(e) =>
-                setNewUsers({ ...newUsers, data_nascimento: e.target.value })
+          type="text"
+          value={newUsers.data_nascimento}
+          placeholder="Data de Nascimento"
+          title="Digite uma data no formato dd/mm/aaaa"
+          onInput={(e) =>
+              setNewUsers({ ...newUsers, data_nascimento: e.target.value })
         }
-        />  <br/>
+    /> <br/>
 
         <input
             type="text"
