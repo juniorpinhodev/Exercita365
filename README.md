@@ -1,4 +1,4 @@
-# **Exercíta365**
+# **Exercita365**
 
 
 # Sobre o projeto
