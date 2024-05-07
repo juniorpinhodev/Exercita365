@@ -8,7 +8,6 @@ import UsersRegistration from '../pages/UsersRegistration.jsx'
 import Login from '../pages/Login.jsx'
 import Dashboard from '../pages/Dashboard.jsx'
 import List from '../pages/List.jsx'
-import SearchCEP from '../pages/SearchCEP.jsx'
 import LocalRegistration from '../pages/LocalRegistration.jsx'
 
 let isAuthenticated = JSON.parse(localStorage.getItem('isAuthenticated')) || false
@@ -27,7 +26,7 @@ const router = createBrowserRouter([
      element: <UsersRegistration />
   },
   {
-     path: '/local-registration',
+     path: '/local/registration',
      element: <LocalRegistration />
   },
   {
@@ -46,10 +45,6 @@ const router = createBrowserRouter([
         path: "/list/:id",
         element: <List />
       },
-      {
-        path: "/cep",
-        element: <SearchCEP />
-      }
     ]
   }
 ])

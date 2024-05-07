@@ -1,6 +1,7 @@
 import { UsersContext } from '../context/UsersContext'
 import React, { useContext, useState } from 'react';
 import Navbar from '../components/Navbar';
+import SearchCEP from '../components/SearchCEP';
 
 function UsersRegistration(){
 
