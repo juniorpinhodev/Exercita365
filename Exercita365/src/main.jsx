@@ -4,7 +4,7 @@ import App from './App.jsx'
 import './index.css'
 import { RouterProvider, Navigate } from 'react-router-dom'
 import { UsersContextProvider } from './context/UsersContext.jsx'
-import Routes  from './router/AppRoutes.jsx'
+import router  from './router/router.jsx'
 
 
 let isAuthenticated = JSON.parse(localStorage.getItem('isAuthenticated')) || false
@@ -15,7 +15,7 @@ const PrivateRoute = ({children}) => {
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <UsersContextProvider>
-    <RouterProvider router={Routes}>
+    <RouterProvider router={router}>
     </RouterProvider>
   </UsersContextProvider>
 );

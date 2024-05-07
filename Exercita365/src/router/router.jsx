@@ -17,7 +17,7 @@ const PrivateRoute = ({children}) => {
   return isAuthenticated ? children : <Navigate to="/login" />
 }
 
-const AppRoutes = createBrowserRouter([
+const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login />
@@ -54,4 +54,4 @@ const AppRoutes = createBrowserRouter([
   }
 ])
 
-export default AppRoutes
+export default router
