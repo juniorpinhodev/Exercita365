@@ -1,4 +1,4 @@
-# **Exercíta365**
+# **Exercita365**
 
 
 # Sobre o projeto
@@ -15,27 +15,31 @@ Após se cadastrar e logar na plataforma, os usuários podem cadastrar novos loc
 
 
 ## Tecnologias utilizadas
-- **Frontend:** *React* com componentes funcionais e hooks, estilizado com *CSS*, *Bootstrap* e *JavaScript*.
+- **Frontend:** *React* com componentes funcionais, estilizado com *CSS* e *JavaScript*.
 - - ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 - - ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 - - ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 
-- **Backend:** *Node.js* e *Express* para criar a API RESTful.
+- **Backend:** *Node.js* (Json Server) para simular backend.
 - - ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
-- - ![jsonServer](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+- - ![jsonServer](https://img.shields.io/badge/jsonServer-6DA55F?style=for-the-badge&logoColor=white&color=blue&labelColor=white)
 
 
 ## Interface do Usuário
 
 A Interface do Usuário deste projeto consiste em um layout simples e intuitiva para gerenciar os dados dos usuários e as listas de locais para exercícios físicos. <br>
 Ao acessar, o usuário encontra a tela de login. Caso o usuário não esteja cadastrado, ele pode criar cadastro clicando em "Cadastre-se aqui".
-![Web 1](https://github.com/juniorpinhodev/assets/blob/main/) <br> <br>
+![login](https://github.com/juniorpinhodev/assets/blob/main/Image-Exercita365/login.png) <br> <br>
 
 Ao efetuar login, o usuário é direcionado a tela principal (Dashboard), o usuário encontra uma lista com informações de locais para exercícios físicos. Também encontra um Mapa com as marcações das localizações exatadas de cada local cadastrado. <br> <br>
-![Web 2](https://github.com/juniorpinhodev/assets/blob/main/) <br> <br>
+![Dashboard1](https://github.com/juniorpinhodev/assets/blob/main/Image-Exercita365/dashboard-1.png) 
+<br>
+![Deashboard2](https://github.com/juniorpinhodev/assets/blob/main/Image-Exercita365/dashboard2.png) 
+
+<br> <br>
 
 Ao clicar no link "Locais", na barra de navegação, o usuário poderá cadstrar novos locais de exercícios físicos e colaborar com o Exercíta365. Também é possivel editar para corrigir informações de locais ou deletar locais, caso a informação esteja duplicada ou inexistente. 
-![Web 2](https://github.com/juniorpinhodev/assets/blob/main/) <br> <br>
+![Locais](https://github.com/juniorpinhodev/assets/blob/main/Image-Exercita365/locais.png) <br> <br>
 
 
 ## Diagrama do Projeto
@@ -44,7 +48,7 @@ Ao preencher a caixa de texto e clicar no botão "Adicionar", uma requisição P
 Para as operações de editar, deletar e exibir na tela, o fluxo é semelhante: uma requisição é enviada do frontend para o backend, que realiza as operações necessárias e retorna os dados atualizados para o frontend.
 
 O diagrama abaixo visualiza esse processo de forma clara e mostra a interação entre as diferentes partes da aplicação, destacando a comunicação entre frontend e backend <br> <br>
-![Diagrama](https://github.com/juniorpinhodev/assets/blob/main/)
+![Diagrama](https://github.com/juniorpinhodev/assets/blob/main/Image-Exercita365/diagrama365.png)
 
 
 ## Guia de Instalação / Como Rodar o Projeto
@@ -59,6 +63,7 @@ git clone https://github.com/juniorpinhodev/Exercita365.git
 ```bash
 cd Exercita365
 ```
+
 #### 2. instalar as dependências
 ```bash
 npm install
@@ -72,32 +77,40 @@ npm install
 ```bash
 cd frontend
 ```
+
 #### 2. instalar as dependências
 - Instalando **npm**
 ```bash
 npm install
 ```
+<br>
 
 - Instalando **json Server**
 ```bash
 npm install json-server
 ```
+<br>
 
 - Instalando **react-dom**
 ```bash
 npm install react-dom
 ```
 
+<br>
+
 - Instalando **react-router-dom**
 ```bash
 npm install react-router-dom
 
 ```
+<br>
 
 - Instalando **react-hook-form**
 ```bash
 npm install react-hook-form
 ```
+
+<br>
 
 - Instalando **leaflet**
 ```bash
