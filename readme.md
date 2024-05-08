@@ -1,7 +1,6 @@
 # **Exercita365**
 
-
-# Sobre o projeto
+## Sobre o projeto
 
 Com o Exercita365, 
 O Exercita365 torna mais fácil encontrar locais para a prática de atividades físicas
