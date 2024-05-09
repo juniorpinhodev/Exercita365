@@ -91,9 +91,26 @@ h1 {
     font-size: 2em;
   }
 
+  h2 {
+    font-size: 1.5em;
+  }
+
+  p {
+    font-size: 1em;
+    line-height: 1.5;
+  }
+
   button {
     padding: 0.5em 1em;
     font-size: 0.8em;
+  }
+
+  .card {
+    margin: 10px;
+  }
+
+  .box {
+    padding: 10px;
   }
 }
 
@@ -108,6 +125,14 @@ body {
   background-color: #222;
   color: #fff;
   font-family: "Poppins", sans-serif;
+}
+
+h2 {
+  font-size: 1.2em;
+}
+
+p {
+  font-size: 0.9em;
 }
 
 
@@ -126,23 +151,10 @@ button:hover {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
 }
 
-
-@media (max-width: 768px) {
-  h1 {
-    font-size: 2em;
-  }
-
-  button {
-    padding: 10px 15px;
-  }
+.card {
+  margin: 5px;
 }
 
-@media (max-width: 480px) {
-  h1 {
-    font-size: 1.5em;
-  }
-
-  button {
-    padding: 8px 12px;
-  }
+.box {
+  padding: 5px;
 }
