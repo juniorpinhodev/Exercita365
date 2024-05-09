@@ -2,7 +2,6 @@
 
 ## Sobre o projeto
 
-Com o Exercita365, 
 O Exercita365 torna mais fácil encontrar locais para a prática de atividades físicas
 Após se cadastrar e logar na plataforma, os usuários podem cadastrar novos locais de exercícios, encontrar pontos próximos em um mapa interativo ou em uma lista, visualizar informações detalhadas sobre os exercícios em cada ponto e contribuir com suas próprias experiências.
 
