@@ -76,10 +76,8 @@ function Dashboard() {
         ) )}
       </>
          
-        <Link to="/local-registration">Registrar Novo Local</Link>
+        <Link to="/local/registration">Registrar Novo Local</Link>
 
-        
-      
     </div>      
     );
   }
