@@ -208,16 +208,29 @@
       ]
     },
     {
-      "id": "7",
       "nome": "Estadio Municipal",
-      "userId": "6",
       "descricao": "Estadio multiesportivo",
       "localizacao": "Av. Paulista, 282",
+      "esportes": [
+        "futebol americano",
+        "futebol"
+      ],
       "longitude": -46.645,
       "latitude": -23.56,
+      "id": "7"
+    },
+    {
+      "nome": "Trilha costa da lagoa",
+      "descricao": "Vista para a Lagoa da Conceição",
+      "localizacao": "Lagoa da Conceição, Florianópolis - SC",
       "esportes": [
-        "futebol americano"
-      ]
+        "caminhada",
+        "trilha",
+        "corrida"
+      ],
+      "longitude": "-27.5701808",
+      "latitude": "-48.4538164",
+      "id": "0414"
     }
   ]
 }

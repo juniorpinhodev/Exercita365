@@ -5,10 +5,12 @@ function LocalRegistration() {
   const [nome, setNome] = useState('');
   const [descricao, setDescricao] = useState('');
   const [localizacao, setLocalizacao] = useState('');
-  const [esportes, setEsportes] = useState('');
+  const [esportes, setEsportes] = useState([]);
   const [longitude, setLongitude] = useState('');
   const [latitude, setLatitude] = useState('');
   const [locais, setLocais] = useState([]);
+  const [id, setId] = useState(null);
+
 
   useEffect(() => {
     const fetchLocais = async () => {
@@ -24,6 +26,7 @@ function LocalRegistration() {
     fetchLocais();
   }, []);
 
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = {
@@ -34,47 +37,80 @@ function LocalRegistration() {
       longitude,
       latitude,
     };
-
-    fetch('http://localhost:3000/list', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    })
-      .then((response) => response.json())
-      .then((result) => {
-        console.log('Dados enviados:', result);
-    
-        setNome('');
-        setDescricao('');
-        setLocalizacao('');
-        setEsportes([]);
-        setLongitude('');
-        setLatitude('');
-
-        setLocais([...locais, result]);
+  
+    if (id) {
+      fetch(`http://localhost:3000/list/${id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
       })
-      .catch((error) => {
-        console.error('Erro ao enviar dados:', error);
-      });
+        .then((response) => response.json())
+        .then((result) => {
+          console.log('Local editado com sucesso:', result);
+  
+          setNome('');
+          setDescricao('');
+          setLocalizacao('');
+          setEsportes([]);
+          setLongitude('');
+          setLatitude('');
+          setId(null);
+  
+          setLocais(locais.map((local) => (local.id === id ? result : local)));
+          window.location.reload();
+        })
+        .catch((error) => {
+          console.error('Erro ao editar local:', error);
+        });
+    } else {
+      fetch('http://localhost:3000/list', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+        .then((response) => response.json())
+        .then((result) => {
+          console.log('Dados enviados:', result);
+  
+          setNome('');
+          setDescricao('');
+          setLocalizacao('');
+          setEsportes([]);
+          setLongitude('');
+          setLatitude('');
+  
+          setLocais([...locais, result]);
+          window.location.reload();
+        })
+        .catch((error) => {
+          console.error('Erro ao enviar dados:', error);
+        });
+    }
   };
+  
 
  
-    const handleEdit = (id) => {
-        // Encontrar o local a ser editado
-        const localEditar = locais.find((local) => local.id === id);
+  const handleEdit = (id) => {
 
-        setNome(localEditar.nome);
-        setDescricao(localEditar.descricao);
-        setLocalizacao(localEditar.localizacao);
-        setEsportes(localEditar.esportes);
-        setLongitude(localEditar.longitude);
-        setLatitude(localEditar.latitude);
-      
-        // Remover o local da lista
-        setLocais(locais.filter((local) => local.id !== id));
-      };
+    const localEditar = locais.find((local) => local.id === id);
+  
+    setNome(localEditar.nome);
+    setDescricao(localEditar.descricao);
+    setLocalizacao(localEditar.localizacao);
+    setEsportes(localEditar.esportes);
+    setLongitude(localEditar.longitude);
+    setLatitude(localEditar.latitude);
+    setId(id);
+
+    setLocais(locais.filter((local) => local.id !== id));
+  
+  };
+
+
       
       const handleDelete = (id) => {
         fetch(`http://localhost:3000/list/${id}`, {
@@ -114,12 +150,12 @@ function LocalRegistration() {
         <br />
         <label>
           Longitude: &nbsp;
-          <input type="text" value={longitude} onChange={(e) => setLongitude(e.target.value)} required />
+          <input type="number" value={longitude} onChange={(e) => setLongitude(e.target.value)} required />
         </label>
         <br />
         <label>
           Latitude: &nbsp;
-          <input type="text" value={latitude} onChange={(e) => setLatitude(e.target.value)} required />
+          <input type="number" value={latitude} onChange={(e) => setLatitude(e.target.value)} required />
         </label>
         <br />
         
@@ -127,8 +163,20 @@ function LocalRegistration() {
           Esportes: &nbsp;
           <select
             value={esportes}
-            onChange={(e) => setEsportes(e.target.value)}
+            onChange={(e) => {
+              const selectedEsportes = [...esportes];
+              const esporte = e.target.value;
+
+              if (selectedEsportes.includes(esporte)) {
+                selectedEsportes.splice(selectedEsportes.indexOf(esporte), 1);
+              } else {
+                selectedEsportes.push(esporte);
+              }
+
+              setEsportes(selectedEsportes);
+            }}
             required
+            multiple
           >
             <option value="">Selecione</option>
             <option value="caminhada">Caminhada</option>
@@ -156,6 +204,8 @@ function LocalRegistration() {
 
         <h2>Locais de Exercícios Registrados</h2>
         <h3>Aqui você pode editar ou deletar locais</h3>
+
+        
         <ul>
             {locais.map((local) => (
             <li key={local.id}>
